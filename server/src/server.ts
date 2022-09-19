@@ -1,7 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import { PrismaClient } from '@prisma/client'
-import { convertingHourStringToMinutes } from './utils/convert-hour-string-to-minutes'
+import { convertHourStringToMinutes } from './utils/convert-hour-string-to-minutes'
 import { convertMinutesToHourString } from './utils/convert-minutes-to-hours-string'
 
 const app = express()
@@ -40,8 +40,8 @@ app.post('/games/:id/ads', async (request, response) => {
       yearsPlaying: body.yearsPlaying,
       discord: body.discord,
       weekDays: body.weekDays.join(','),
-      hourStart: convertingHourStringToMinutes(body.hourStart),
-      hourEnd: convertingHourStringToMinutes(body.hourEnd),
+      hourStart: convertHourStringToMinutes(body.hourStart),
+      hourEnd: convertHourStringToMinutes(body.hourEnd),
       useVoiceChannel: body.useVoiceChannel
     }
   })

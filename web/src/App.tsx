@@ -5,7 +5,7 @@ import logoImg from './assets/nlw-logo.svg'
 import { GameBanner } from './components/GameBanner'
 import { CreateAdBanner } from './components/CreateAdBanner'
 import * as Dialog from '@radix-ui/react-dialog'
-import CreateAdModal from './components/CreateAdModal'
+import { CreateAdModal } from './components/CreateAdModal'
 
 interface Game {
   id: string
@@ -15,7 +15,6 @@ interface Game {
     ads: number
   }
 }
-// teste
 function App() {
   const [games, setGames] = React.useState<Game[]>([])
 
